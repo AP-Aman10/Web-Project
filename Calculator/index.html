@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo-section">
+            <div class="logo-box">
+                <span class="logo-text">AK</span>
+            </div>
+            <div>
+                <h1 class="author-name">AP Knight10</h1>
+                <p class="version-tag">Workspace v2.0</p>
+            </div>
+        </div>
+
+        <nav>
+            <button onclick="toggleHistory()" class="history-toggle-btn">
+                <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                History
+            </button>
+        </nav>
+    </header>
+
+    <aside id="history-panel" class="history-sidebar">
+        <div class="sidebar-header">
+            <h2 class="sidebar-title">Calculation History</h2>
+            <button onclick="toggleHistory()" class="close-btn">
+                <svg class="icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div id="history-list" class="history-list custom-scrollbar">
+            <p class="empty-msg">No history yet</p>
+        </div>
+        <button onclick="clearHistory()" class="clear-btn">Clear All</button>
+    </aside>
+
+    <main class="calculator-container">
+        <div class="calc-card glass-blur">
+            <div class="dot-container">
+                <div class="dot-item dot-red" onclick="changeTheme('#ff4b4b')"></div>
+                <div class="dot-item dot-blue" onclick="changeTheme('#3b82f6')"></div>
+                <div class="dot-item dot-green" onclick="changeTheme('#22c55e')"></div>
+                <div class="dot-item dot-yellow" onclick="changeTheme('#eab308')"></div>
+            </div>
+
+            <div class="display-wrapper">
+                <div id="history-display" class="history-line"></div>
+                <div id="main-display" class="main-num">0</div>
+            </div>
+
+            <div class="button-grid">
+                <button onclick="clearAll()" class="btn-calc text-red">AC</button>
+                <button onclick="deleteLast()" class="btn-calc text-gray">←</button>
+                <button onclick="setOperator('%')" class="btn-calc accent-text">%</button>
+                <button onclick="setOperator('/')" class="btn-calc accent-text">÷</button>
+
+                <button onclick="appendNumber('7')" class="btn-calc">7</button>
+                <button onclick="appendNumber('8')" class="btn-calc">8</button>
+                <button onclick="appendNumber('9')" class="btn-calc">9</button>
+                <button onclick="setOperator('*')" class="btn-calc accent-text">×</button>
+
+                <button onclick="appendNumber('4')" class="btn-calc">4</button>
+                <button onclick="appendNumber('5')" class="btn-calc">5</button>
+                <button onclick="appendNumber('6')" class="btn-calc">6</button>
+                <button onclick="setOperator('-')" class="btn-calc accent-text">−</button>
+
+                <button onclick="appendNumber('1')" class="btn-calc">1</button>
+                <button onclick="appendNumber('2')" class="btn-calc">2</button>
+                <button onclick="appendNumber('3')" class="btn-calc">3</button>
+                <button onclick="setOperator('+')" class="btn-calc accent-text">+</button>
+
+                <button onclick="toggleSign()" class="btn-calc">±</button>
+                <button onclick="appendNumber('0')" class="btn-calc">0</button>
+                <button onclick="appendNumber('.')" class="btn-calc">.</button>
+                <button onclick="calculate()" class="btn-calc accent-bg equal-btn">=</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer glass-blur">
+        <div class="footer-content">
+            <div class="legal-section">
+                <p>© 2025 // ALL RIGHTS RESERVED</p>
+            </div>
+
+            <div class="credit-section">
+                <p class="credit-label">Created By</p>
+                <p class="credit-name">AP Knight10 <span class="accent-text">Design</span></p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/AP-Aman10" target="_blank" class="social-item">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://youtube.com/@AP_Knight10" target="_blank" class="social-item yt">
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
