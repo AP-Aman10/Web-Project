@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Neon Glass To-Do List</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div>
+                <h1>To-Do List</h1>
+                <p>Stay focused. Stay glowing.</p>
+                <div class="progress-wrap">
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="clock" class="clock"></div>
+            <div id="numbers" class="counter">0 / 0</div>
+        </header>
+
+        <form>
+            <input type="text" id="taskInput" placeholder="Write your task…" />
+            <button id="newTask">+</button>
+        </form>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

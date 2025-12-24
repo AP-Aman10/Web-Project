@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>AP Knight10</title>
+</head>
+
+<body>
+
+    <nav class="sidebar">
+        <div class="nav-icon active" onclick="switchTab('home', this)" title="Home">
+            <i class="fa-solid fa-house"></i>
+        </div>
+        <div class="nav-icon" onclick="switchTab('primary', this)" title="Main Apps">
+            <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="nav-icon" onclick="switchTab('social', this)" title="Social Media">
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+        <div class="nav-icon" onclick="switchTab('games', this)" title="Gaming">
+            <i class="fa-solid fa-gamepad"></i>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <div>
+                <h1 id="greeting">Welcome Back</h1>
+                <p
+                    style="color: var(--primary); letter-spacing: 3px; font-size: 0.75rem; margin-top: 8px; font-weight: 700;">
+                    AP Knight10 DASHBOARD</p>
+            </div>
+            <div class="clock" id="clock">00:00:00</div>
+        </header>
+
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="search-box" id="searchInput" placeholder="Search your applications...">
+        </div>
+
+        <div id="home" class="app-grid active">
+            <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <div class="flip-front-label">
+                            <h2>AP Knight10</h2>
+                            <p style="font-size: 0.8rem; opacity: 0.7;">DOB:= 20-11-2005</p>
+                        </div>
+                    </div>
+                    <div class="flip-back">
+                        <h3>AP Knight10</h3>
+                        <div style="display: flex; gap: 8px;">
+                            <span class="tag">Action</span>
+                            <span class="tag">Thriller</span>
+                        </div>
+                        <p style="font-size: 1rem; color: #592a2a; line-height: 1.6; margin-top: 10px;">
+                            Creative coder & tech enthusiast.<br>
+                            Born on <strong>20 November 2005</strong>.
+                            Passionate about UI design, development & gaming.
+
+                            <br><strong>🎮 Favorite Games:</strong><br>
+                            <strong>Free Fire, Roblox, Minecraft, COC</strong>
+                        </p>
+                        <div style="margin-top: auto; padding-top: 15px; border-top: 1px solid #333;">
+                            <p style="color: var(--primary); font-weight: 700;">Rating: 7.4/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="color-switcher">
+            <span class="cs-label">Theme</span>
+
+            <button class="color-dot active" data-hue="0"></button> <!-- Red -->
+            <button class="color-dot" data-hue="30"></button> <!-- Orange -->
+            <button class="color-dot" data-hue="60"></button> <!-- Yellow -->
+            <button class="color-dot" data-hue="120"></button> <!-- Green -->
+            <button class="color-dot" data-hue="180"></button> <!-- Cyan -->
+            <button class="color-dot" data-hue="240"></button> <!-- Blue -->
+            <button class="color-dot" data-hue="280"></button> <!-- Violet -->
+        </div>
+
+
+        <div id="primary" class="app-grid">
+            <a href="https://google.com" target="_blank" class="card" data-name="Google">
+                <img src="Image/google.png" alt="Google">
+                <span>Google</span>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="card" data-name="YouTube">
+                <img src="Image/youtube.png" alt="YouTube">
+                <span>YouTube</span>
+            </a>
+            <a href="https://music.youtube.com" target="_blank" class="card" data-name="Gmail">
+                <img src="Image/play.png" alt="YouTube Play">
+                <span>YouTube Play</span>
+            </a>
+            <a href="https://gmail.com" target="_blank" class="card" data-name="Gmail">
+                <img src="Image/gmail.png" alt="Gmail">
+                <span>Gmail</span>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" class="card" data-name="Gmail">
+                <img src="Image/facebook.png" alt="Facebook">
+                <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="card" data-name="GitHub">
+                <img src="Image/instagram.png" alt="instagram" style="filter: invert(1);">
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank" class="card" data-name="GitHub">
+                <img src="Image/whatsapp.png" alt="whatsapp" style="filter: invert(1);">
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="card" data-name="GitHub">
+                <img src="Image/twitter.png" alt="twitter" style="filter: invert(1);">
+                <span>Twitter</span>
+            </a>
+        </div>
+
+        <div id="social" class="app-grid">
+            <a href="https://www.reddit.com" target="_blank" class="card" data-name="Instagram">
+                <img src="Image/reddit.png" alt="reddit">
+                <span>Reddit</span>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="card" data-name="Instagram">
+                <img src="Image/linkedin.png" alt="linkedin">
+                <span>Linkedin</span>
+            </a>
+            <a href="https://github.com" target="_blank" class="card" data-name="Instagram">
+                <img src="Image/github.png" alt="github">
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.snapchat.com" target="_blank" class="card" data-name="Instagram">
+                <img src="Image/snapchat.png" alt="snapchat">
+                <span>SnapChat</span>
+            </a>
+            <a href="https://discord.com" target="_blank" class="card" data-name="Instagram">
+                <img src="Image/discord.png" alt="discord">
+                <span>Discord</span>
+            </a>
+            <a href="https://www.xbox.com" target="_blank" class="card" data-name="Instagram">
+                <img src="Image/xbox.png" alt="xbox">
+                <span>Xbox</span>
+            </a>
+            <a href="https://store.steampowered.com" target="_blank" class="card" data-name="Instagram">
+                <img src="Image/social.png" alt="steam">
+                <span>Steam</span>
+            </a>
+        </div>
+
+        <div id="games" class="app-grid">
+            <a href="https://roblox.com" target="_blank" class="card" data-name="Roblox">
+                <img src="Image/roblox.png" alt="Roblox">
+                <span>Roblox</span>
+            </a>
+            <a href="https://bloxfruithub.com" target="_blank" class="card" data-name="Roblox">
+                <img src="Image/Blox Fruit.png" alt="Blox Fruits Values">
+                <span>Blox Fruits Values</span>
+            </a>
+            <a href="https://bloxfruitsvalues.com" target="_blank" class="card" data-name="Roblox">
+                <img src="Image/value.png" alt="Blox Fruits Values">
+                <span>Blox Fruits Values</span>
+            </a>
+        </div>
+
+        <div id="search-results" class="app-grid"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --neon-cyan: #24feee;
+    --neon-pink: #ff4fd8;
+    --neon-blue: #6a7cff;
+    --text-main: #ffffff;
+    --text-muted: #b9c0ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at top left, rgba(36, 254, 238, .25), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(255, 79, 216, .25), transparent 40%),
+        url("Image/Image(1).jpg") center/cover no-repeat;
+    animation: hueShift 18s linear infinite;
+}
+
+@keyframes hueShift {
+    from {
+        filter: rotate(0deg)
+    }
+
+    to {
+        filter: rotate(360deg)
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+    padding: 28px;
+    border-radius: 26px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px) saturate(150%);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+        0 0 40px rgba(36, 254, 238, .15),
+        inset 0 0 30px rgba(255, 255, 255, .05);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+header h1 {
+    font-size: 26px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.clock {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 12px;
+    color: #0ff;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+.progress-wrap {
+    margin-top: 14px
+}
+
+.progress-bar {
+    width: 200%;
+    height: 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .12);
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-blue), var(--neon-pink));
+    transition: width .4s ease;
+}
+
+.counter {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+    background: radial-gradient(circle, var(--neon-blue), transparent 70%);
+}
+
+form {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+input {
+    flex: 1;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, .35);
+    color: #fff;
+    outline: none;
+}
+
+input::placeholder {
+    color: #9aa2ff
+}
+
+button {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+    box-shadow: 0 0 20px rgba(36, 254, 238, .6);
+}
+
+ul {
+    list-style: none;
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, .35);
+    border: 1px solid var(--glass-border);
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+}
+
+.task input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--neon-cyan);
+    cursor: pointer;
+}
+
+.completed p {
+    text-decoration: line-through;
+    color: var(--neon-cyan);
+}
+
+.icons img {
+    width: 22px;
+    height: 22px;
+    margin-left: 12px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, .4));
+}
